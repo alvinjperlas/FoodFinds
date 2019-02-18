@@ -1,46 +1,50 @@
 //
-//  ChangeCityViewController.swift
-//  WeatherApp
-//
-//  Created by Angela Yu on 23/08/2015.
-//  Copyright (c) 2015 London App Brewery. All rights reserved.
+//  Created by Alvin Perlas on 2/15/19.
+//  Copyright © 2019 alvinperlas. All rights reserved.
 //
 
 import UIKit
 
 
+
+
 //Write the protocol declaration here:
 protocol FiltersDelegate {
-    func userEnteredANewCityName(city: String)
+    func userEnteredFilter(data: YelpSearchFilter)
 }
 
 
 class FiltersViewController: UIViewController {
     
     var delegate : FiltersDelegate?
+    @IBOutlet weak var categoryTextField: UITextField!
+    @IBOutlet weak var ratingControl: UISegmentedControl!
+    @IBOutlet weak var priceControl: UISegmentedControl!
+    @IBOutlet weak var isOpen: UISwitch!
     
-    //This is the pre-linked IBOutlets to the text field:
-    @IBOutlet weak var changeCityTextField: UITextField!
-
-    
-    //This is the IBAction that gets called when the user taps on the "Get Weather" button:
-    
-    
-    @IBAction func getWeatherPressed(_ sender: AnyObject) {
-
-        let cityName = changeCityTextField.text!
+    @IBAction func startExploring(_ sender: Any) {
+        let category = categoryTextField.text
+        let price = String(priceControl.selectedSegmentIndex)
+        let rating = ratingControl.selectedSegmentIndex
+        let open = isOpen.isOn
         
-        delegate?.userEnteredANewCityName(city: cityName)
-
+        let searchFilter = YelpSearchFilter(category: category!, rating: rating,price: price,open: open)
+    
+        delegate?.userEnteredFilter(data: searchFilter)
         self.dismiss(animated: true, completion: nil)
-        
     }
     
     
-
-    //This is the IBAction that gets called when the user taps the back button. It dismisses the ChangeCityViewController.
+    
     @IBAction func backButtonPressed(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    
+    
+    
+    
+    
+    
     
 }
