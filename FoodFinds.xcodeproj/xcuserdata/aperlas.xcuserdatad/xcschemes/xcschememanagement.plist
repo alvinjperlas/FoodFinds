@@ -4,7 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Clima.xcscheme</key>
+		<key>FoodFinds.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>Geotify.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +17,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>63E28ACA1B99C32400FBF6E0</key>
+		<key>D90CB64C1A739B7A00228A1F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

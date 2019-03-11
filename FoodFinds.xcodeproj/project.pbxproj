@@ -7,171 +7,190 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4D9F13AF2213D3A200AA30C0 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D9F13AE2213D3A200AA30C0 /* categories.json */; };
-		4DB152B32217AC8A0004B377 /* YelpDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB152B22217AC8A0004B377 /* YelpDataModel.swift */; };
-		4DCE3E5B22192C7B00D89EF5 /* WeatherDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCE3E5A22192C7B00D89EF5 /* WeatherDataModel.swift */; };
-		63E28AD11B99C32400FBF6E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E28AD01B99C32400FBF6E0 /* AppDelegate.swift */; };
-		63E28AF61B99C36100FBF6E0 /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E28AF21B99C36100FBF6E0 /* FiltersViewController.swift */; };
-		63E28AF71B99C36100FBF6E0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63E28AF31B99C36100FBF6E0 /* Images.xcassets */; };
-		63E28AF81B99C36100FBF6E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63E28AF41B99C36100FBF6E0 /* Main.storyboard */; };
-		63E28AF91B99C36100FBF6E0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E28AF51B99C36100FBF6E0 /* HomeViewController.swift */; };
-		63E28AFF1B99C3B300FBF6E0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63E28AFE1B99C3B300FBF6E0 /* LaunchScreen.xib */; };
-		B8FFC4396945495740D96541 /* Pods_Clima.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63CF3E1541F39AA8B5EEE5BD /* Pods_Clima.framework */; };
+		4D5268462235F41A00B23CCD /* SuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5268452235F41A00B23CCD /* SuggestionsViewController.swift */; };
+		4D5268482235F94F00B23CCD /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5268472235F94F00B23CCD /* FiltersViewController.swift */; };
+		4D52684A2235F97700B23CCD /* YelpDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5268492235F97700B23CCD /* YelpDataModel.swift */; };
+		D90CB6531A739B7A00228A1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90CB6521A739B7A00228A1F /* AppDelegate.swift */; };
+		D90CB6581A739B7A00228A1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D90CB6561A739B7A00228A1F /* Main.storyboard */; };
+		D90CB65A1A739B7A00228A1F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D90CB6591A739B7A00228A1F /* Images.xcassets */; };
+		D90CB65D1A739B7A00228A1F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D90CB65B1A739B7A00228A1F /* LaunchScreen.xib */; };
+		D90CB6731A739D4300228A1F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D90CB6721A739D4300228A1F /* CoreLocation.framework */; };
+		D90CB6751A73A16700228A1F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D90CB6741A73A16700228A1F /* MapKit.framework */; };
+		D90CB6771A73B1ED00228A1F /* GeotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90CB6761A73B1ED00228A1F /* GeotificationsViewController.swift */; };
+		D90CB6801A73C9E200228A1F /* Geotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90CB67E1A73C4B200228A1F /* Geotification.swift */; };
+		D90CB6821A73CBC600228A1F /* AddGeotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90CB67C1A73B2BD00228A1F /* AddGeotificationViewController.swift */; };
+		D9835AF31AA6076800D265BC /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9835AF21AA6076800D265BC /* Utilities.swift */; };
+		D9C1AF6C1A77CD6C00A06B2F /* Apple.gpx in Resources */ = {isa = PBXBuildFile; fileRef = D9C1AF6B1A77CD6C00A06B2F /* Apple.gpx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4D9F13AE2213D3A200AA30C0 /* categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
-		4DB152B22217AC8A0004B377 /* YelpDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpDataModel.swift; sourceTree = "<group>"; };
-		4DCE3E5A22192C7B00D89EF5 /* WeatherDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataModel.swift; sourceTree = "<group>"; };
-		63CF3E1541F39AA8B5EEE5BD /* Pods_Clima.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clima.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		63E28ACB1B99C32400FBF6E0 /* FoodFinds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodFinds.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		63E28ACF1B99C32400FBF6E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		63E28AD01B99C32400FBF6E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		63E28AF21B99C36100FBF6E0 /* FiltersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
-		63E28AF31B99C36100FBF6E0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		63E28AF41B99C36100FBF6E0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		63E28AF51B99C36100FBF6E0 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		63E28AFE1B99C3B300FBF6E0 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
-		8236288D58DBEE9B871A63BD /* Pods-Clima.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clima.release.xcconfig"; path = "Pods/Target Support Files/Pods-Clima/Pods-Clima.release.xcconfig"; sourceTree = "<group>"; };
-		9BB140805F4A38A2086748F2 /* Pods-Clima.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clima.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Clima/Pods-Clima.debug.xcconfig"; sourceTree = "<group>"; };
+		4D5268452235F41A00B23CCD /* SuggestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsViewController.swift; sourceTree = "<group>"; };
+		4D5268472235F94F00B23CCD /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
+		4D5268492235F97700B23CCD /* YelpDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpDataModel.swift; sourceTree = "<group>"; };
+		A16373B92054471A0065C2D9 /* Google.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Google.gpx; sourceTree = "<group>"; };
+		A16373BA2054475A0065C2D9 /* SimulatedLocations.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SimulatedLocations.gpx; sourceTree = "<group>"; };
+		D90CB64D1A739B7A00228A1F /* FoodFinds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodFinds.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D90CB6511A739B7A00228A1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D90CB6521A739B7A00228A1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D90CB6571A739B7A00228A1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D90CB6591A739B7A00228A1F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D90CB65C1A739B7A00228A1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		D90CB6721A739D4300228A1F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D90CB6741A73A16700228A1F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D90CB6761A73B1ED00228A1F /* GeotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeotificationsViewController.swift; sourceTree = "<group>"; };
+		D90CB67C1A73B2BD00228A1F /* AddGeotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGeotificationViewController.swift; sourceTree = "<group>"; };
+		D90CB67E1A73C4B200228A1F /* Geotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geotification.swift; sourceTree = "<group>"; };
+		D9835AF21AA6076800D265BC /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		D9C1AF6B1A77CD6C00A06B2F /* Apple.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Apple.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		63E28AC81B99C32400FBF6E0 /* Frameworks */ = {
+		D90CB64A1A739B7A00228A1F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8FFC4396945495740D96541 /* Pods_Clima.framework in Frameworks */,
+				D90CB6751A73A16700228A1F /* MapKit.framework in Frameworks */,
+				D90CB6731A739D4300228A1F /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1648FEE2DDF6A7B9A7D429E6 /* Pods */ = {
+		4D52684B2235FB3A00B23CCD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9BB140805F4A38A2086748F2 /* Pods-Clima.debug.xcconfig */,
-				8236288D58DBEE9B871A63BD /* Pods-Clima.release.xcconfig */,
+				4D5268492235F97700B23CCD /* YelpDataModel.swift */,
 			);
-			name = Pods;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		18E16A757745B2FDFAF74CBD /* Frameworks */ = {
+		4D52684C2235FB4000B23CCD /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				63CF3E1541F39AA8B5EEE5BD /* Pods_Clima.framework */,
+				4D5268452235F41A00B23CCD /* SuggestionsViewController.swift */,
+				4D5268472235F94F00B23CCD /* FiltersViewController.swift */,
+				D90CB6761A73B1ED00228A1F /* GeotificationsViewController.swift */,
+				D90CB67C1A73B2BD00228A1F /* AddGeotificationViewController.swift */,
 			);
-			name = Frameworks;
+			name = ViewController;
 			sourceTree = "<group>";
 		};
-		63E28AC21B99C32400FBF6E0 = {
+		4D52684D2235FB7600B23CCD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				63E28ACD1B99C32400FBF6E0 /* FoodFinds */,
-				63E28ACC1B99C32400FBF6E0 /* Products */,
-				1648FEE2DDF6A7B9A7D429E6 /* Pods */,
-				18E16A757745B2FDFAF74CBD /* Frameworks */,
+				D90CB6561A739B7A00228A1F /* Main.storyboard */,
+				D90CB6591A739B7A00228A1F /* Images.xcassets */,
+				D90CB65B1A739B7A00228A1F /* LaunchScreen.xib */,
 			);
+			path = View;
 			sourceTree = "<group>";
 		};
-		63E28ACC1B99C32400FBF6E0 /* Products */ = {
+		4D52684E2235FB8900B23CCD /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				63E28ACB1B99C32400FBF6E0 /* FoodFinds.app */,
+				D90CB6521A739B7A00228A1F /* AppDelegate.swift */,
+				D9835AF21AA6076800D265BC /* Utilities.swift */,
+				D90CB67E1A73C4B200228A1F /* Geotification.swift */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		D90CB6441A739B7A00228A1F = {
+			isa = PBXGroup;
+			children = (
+				D90CB64F1A739B7A00228A1F /* FoodFinds */,
+				D9AEA6FE1A793D570020A0D4 /* Frameworks */,
+				D90CB64E1A739B7A00228A1F /* Products */,
+			);
+			indentWidth = 2;
+			sourceTree = "<group>";
+			tabWidth = 2;
+		};
+		D90CB64E1A739B7A00228A1F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D90CB64D1A739B7A00228A1F /* FoodFinds.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		63E28ACD1B99C32400FBF6E0 /* FoodFinds */ = {
+		D90CB64F1A739B7A00228A1F /* FoodFinds */ = {
 			isa = PBXGroup;
 			children = (
-				63E28AFD1B99C38100FBF6E0 /* View */,
-				63E28AFA1B99C36D00FBF6E0 /* Model */,
-				63E28AFB1B99C37500FBF6E0 /* Controller */,
-				63E28AF31B99C36100FBF6E0 /* Images.xcassets */,
-				63E28AFE1B99C3B300FBF6E0 /* LaunchScreen.xib */,
-				63E28ACE1B99C32400FBF6E0 /* Supporting Files */,
+				4D52684E2235FB8900B23CCD /* Common */,
+				4D52684D2235FB7600B23CCD /* View */,
+				4D52684C2235FB4000B23CCD /* ViewController */,
+				4D52684B2235FB3A00B23CCD /* Model */,
+				D90CB6501A739B7A00228A1F /* Supporting Files */,
 			);
 			path = FoodFinds;
 			sourceTree = "<group>";
 		};
-		63E28ACE1B99C32400FBF6E0 /* Supporting Files */ = {
+		D90CB6501A739B7A00228A1F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4D9F13AE2213D3A200AA30C0 /* categories.json */,
-				63E28ACF1B99C32400FBF6E0 /* Info.plist */,
+				D9C1AF6B1A77CD6C00A06B2F /* Apple.gpx */,
+				A16373B92054471A0065C2D9 /* Google.gpx */,
+				A16373BA2054475A0065C2D9 /* SimulatedLocations.gpx */,
+				D90CB6511A739B7A00228A1F /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		63E28AFA1B99C36D00FBF6E0 /* Model */ = {
+		D9AEA6FE1A793D570020A0D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4DB152B22217AC8A0004B377 /* YelpDataModel.swift */,
-				4DCE3E5A22192C7B00D89EF5 /* WeatherDataModel.swift */,
+				D90CB6741A73A16700228A1F /* MapKit.framework */,
+				D90CB6721A739D4300228A1F /* CoreLocation.framework */,
 			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		63E28AFB1B99C37500FBF6E0 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				63E28AF21B99C36100FBF6E0 /* FiltersViewController.swift */,
-				63E28AF51B99C36100FBF6E0 /* HomeViewController.swift */,
-				63E28AD01B99C32400FBF6E0 /* AppDelegate.swift */,
-			);
-			name = Controller;
-			sourceTree = "<group>";
-		};
-		63E28AFD1B99C38100FBF6E0 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				63E28AF41B99C36100FBF6E0 /* Main.storyboard */,
-			);
-			name = View;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		63E28ACA1B99C32400FBF6E0 /* FoodFinds */ = {
+		D90CB64C1A739B7A00228A1F /* FoodFinds */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 63E28AEA1B99C32400FBF6E0 /* Build configuration list for PBXNativeTarget "FoodFinds" */;
+			buildConfigurationList = D90CB66C1A739B7A00228A1F /* Build configuration list for PBXNativeTarget "FoodFinds" */;
 			buildPhases = (
-				E4320269D1839B05581CDD2F /* [CP] Check Pods Manifest.lock */,
-				63E28AC71B99C32400FBF6E0 /* Sources */,
-				63E28AC81B99C32400FBF6E0 /* Frameworks */,
-				63E28AC91B99C32400FBF6E0 /* Resources */,
-				82608B0F7D4A25DD0D1CF92C /* [CP] Embed Pods Frameworks */,
-				FCA83E385F53D3D13BC6AAF0 /* [CP] Copy Pods Resources */,
+				D90CB6491A739B7A00228A1F /* Sources */,
+				D90CB64A1A739B7A00228A1F /* Frameworks */,
+				D90CB64B1A739B7A00228A1F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = FoodFinds;
-			productName = Clima;
-			productReference = 63E28ACB1B99C32400FBF6E0 /* FoodFinds.app */;
+			productName = Geotify;
+			productReference = D90CB64D1A739B7A00228A1F /* FoodFinds.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		63E28AC31B99C32400FBF6E0 /* Project object */ = {
+		D90CB6451A739B7A00228A1F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 1000;
-				ORGANIZATIONNAME = alvinperlas;
+				LastSwiftMigration = 0730;
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "Ken Toh";
 				TargetAttributes = {
-					63E28ACA1B99C32400FBF6E0 = {
-						CreatedOnToolsVersion = 6.4;
-						LastSwiftMigration = 1000;
+					D90CB64C1A739B7A00228A1F = {
+						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 9UDSV32962;
+						LastSwiftMigration = 0920;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
-			buildConfigurationList = 63E28AC61B99C32400FBF6E0 /* Build configuration list for PBXProject "FoodFinds" */;
+			buildConfigurationList = D90CB6481A739B7A00228A1F /* Build configuration list for PBXProject "FoodFinds" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -179,105 +198,69 @@
 				en,
 				Base,
 			);
-			mainGroup = 63E28AC21B99C32400FBF6E0;
-			productRefGroup = 63E28ACC1B99C32400FBF6E0 /* Products */;
+			mainGroup = D90CB6441A739B7A00228A1F;
+			productRefGroup = D90CB64E1A739B7A00228A1F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				63E28ACA1B99C32400FBF6E0 /* FoodFinds */,
+				D90CB64C1A739B7A00228A1F /* FoodFinds */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		63E28AC91B99C32400FBF6E0 /* Resources */ = {
+		D90CB64B1A739B7A00228A1F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63E28AF71B99C36100FBF6E0 /* Images.xcassets in Resources */,
-				4D9F13AF2213D3A200AA30C0 /* categories.json in Resources */,
-				63E28AFF1B99C3B300FBF6E0 /* LaunchScreen.xib in Resources */,
-				63E28AF81B99C36100FBF6E0 /* Main.storyboard in Resources */,
+				D90CB6581A739B7A00228A1F /* Main.storyboard in Resources */,
+				D90CB65D1A739B7A00228A1F /* LaunchScreen.xib in Resources */,
+				D9C1AF6C1A77CD6C00A06B2F /* Apple.gpx in Resources */,
+				D90CB65A1A739B7A00228A1F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		82608B0F7D4A25DD0D1CF92C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Clima/Pods-Clima-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Clima/Pods-Clima-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E4320269D1839B05581CDD2F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Clima-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FCA83E385F53D3D13BC6AAF0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Clima/Pods-Clima-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		63E28AC71B99C32400FBF6E0 /* Sources */ = {
+		D90CB6491A739B7A00228A1F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63E28AF91B99C36100FBF6E0 /* HomeViewController.swift in Sources */,
-				4DCE3E5B22192C7B00D89EF5 /* WeatherDataModel.swift in Sources */,
-				4DB152B32217AC8A0004B377 /* YelpDataModel.swift in Sources */,
-				63E28AD11B99C32400FBF6E0 /* AppDelegate.swift in Sources */,
-				63E28AF61B99C36100FBF6E0 /* FiltersViewController.swift in Sources */,
+				D90CB6821A73CBC600228A1F /* AddGeotificationViewController.swift in Sources */,
+				D90CB6531A739B7A00228A1F /* AppDelegate.swift in Sources */,
+				4D5268482235F94F00B23CCD /* FiltersViewController.swift in Sources */,
+				4D52684A2235F97700B23CCD /* YelpDataModel.swift in Sources */,
+				4D5268462235F41A00B23CCD /* SuggestionsViewController.swift in Sources */,
+				D90CB6771A73B1ED00228A1F /* GeotificationsViewController.swift in Sources */,
+				D9835AF31AA6076800D265BC /* Utilities.swift in Sources */,
+				D90CB6801A73C9E200228A1F /* Geotification.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		D90CB6561A739B7A00228A1F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D90CB6571A739B7A00228A1F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D90CB65B1A739B7A00228A1F /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D90CB65C1A739B7A00228A1F /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
-		63E28AE81B99C32400FBF6E0 /* Debug */ = {
+		D90CB66A1A739B7A00228A1F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -306,7 +289,6 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -324,7 +306,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -332,7 +314,7 @@
 			};
 			name = Debug;
 		};
-		63E28AE91B99C32400FBF6E0 /* Release */ = {
+		D90CB66B1A739B7A00228A1F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -360,8 +342,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -372,62 +353,68 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		63E28AEB1B99C32400FBF6E0 /* Debug */ = {
+		D90CB66D1A739B7A00228A1F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9BB140805F4A38A2086748F2 /* Pods-Clima.debug.xcconfig */;
 			buildSettings = {
-				INFOPLIST_FILE = FoodFinds/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 9UDSV32962;
+				INFOPLIST_FILE = "$(SRCROOT)/FoodFinds/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alvinperlas.FoodFinds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
-		63E28AEC1B99C32400FBF6E0 /* Release */ = {
+		D90CB66E1A739B7A00228A1F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8236288D58DBEE9B871A63BD /* Pods-Clima.release.xcconfig */;
 			buildSettings = {
-				INFOPLIST_FILE = FoodFinds/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 9UDSV32962;
+				INFOPLIST_FILE = "$(SRCROOT)/FoodFinds/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alvinperlas.FoodFinds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		63E28AC61B99C32400FBF6E0 /* Build configuration list for PBXProject "FoodFinds" */ = {
+		D90CB6481A739B7A00228A1F /* Build configuration list for PBXProject "FoodFinds" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				63E28AE81B99C32400FBF6E0 /* Debug */,
-				63E28AE91B99C32400FBF6E0 /* Release */,
+				D90CB66A1A739B7A00228A1F /* Debug */,
+				D90CB66B1A739B7A00228A1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		63E28AEA1B99C32400FBF6E0 /* Build configuration list for PBXNativeTarget "FoodFinds" */ = {
+		D90CB66C1A739B7A00228A1F /* Build configuration list for PBXNativeTarget "FoodFinds" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				63E28AEB1B99C32400FBF6E0 /* Debug */,
-				63E28AEC1B99C32400FBF6E0 /* Release */,
+				D90CB66D1A739B7A00228A1F /* Debug */,
+				D90CB66E1A739B7A00228A1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 63E28AC31B99C32400FBF6E0 /* Project object */;
+	rootObject = D90CB6451A739B7A00228A1F /* Project object */;
 }
