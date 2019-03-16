@@ -2,6 +2,8 @@
 import UIKit
 import MapKit
 import CoreLocation
+import SwiftyJSON
+import Alamofire
 
 
 
@@ -21,19 +23,38 @@ class HomeViewController: UIViewController {
   
   
   
+  let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather"
+  let APP_ID = "e72ca729af228beabd5d20e3b7749713"
+  
+  let YELP_CLIENTID = "VgKiArW_QzF_M0scNN5CMg"
+  
+  let headers = [
+    "Authorization": "Bearer OPtj-IXqyJ2Qqtb1USWpc4xKqeyDAhrby8RJezJuRBFsGKeQwyh6XNlrMLlEe--_0zXOHbP5GPod_9krNU71ltbmLjGCEO8IYekZWj_c3D84o7dNIrMBbWlj4XoPW3Yx",
+    "Content-Type": "application/json"
+  ]
+  let YELP_URL = "https://api.yelp.com/v3"
+  let YELP_ENDPOINT_SEARCH = "/businesses/search"
+
+   var currentFilter = YelpSearchFilter(category: "", rating: 0,price: "0",open: true)
+  var yelpSearchResults : [YelpDataModel] = []
   @IBOutlet weak var mapView: MKMapView!
   
+  var asyncTaskList : [ DispatchWorkItem] = []
   var geotifications: [Geotification] = []
   var locationManager = CLLocationManager()
   
-  
-  
+    @IBOutlet weak var debuglabel2: UILabel!
+    
+    @IBOutlet weak var debuglabel: UILabel!
+    
   
   override func viewDidLoad() {
     super.viewDidLoad()
     locationManager.delegate = self
     locationManager.requestAlwaysAuthorization()
+
    // loadAllGeotifications()
+    locationManager.startUpdatingLocation()
     mapView.zoomToUserLocation()
   }
 
@@ -44,42 +65,8 @@ class HomeViewController: UIViewController {
   
   
   
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "addGeotification" {
-      let navigationController = segue.destination as! UINavigationController
-      let vc = navigationController.viewControllers.first as! AddGeotificationViewController
-      vc.delegate = self
-    }
-  }
   
   
-  
-  
-//
-//
-//  // MARK: Loading and saving functions
-//  func loadAllGeotifications() {
-//    geotifications.removeAll()
-//    let allGeotifications = Geotification.allGeotifications()
-//    allGeotifications.forEach { add($0) }
-//  }
-//
-//
-//
-//
-//
-//
-//  func saveAllGeotifications() {
-//    let encoder = JSONEncoder()
-//    do {
-//      let data = try encoder.encode(geotifications)
-//      UserDefaults.standard.set(data, forKey: PreferencesKeys.savedItems)
-//    } catch {
-//      print("error encoding geotifications")
-//    }
-//  }
-//
-//
   
   
   
@@ -105,15 +92,7 @@ class HomeViewController: UIViewController {
   
   
   
-//
-//
-//  func updateGeotificationsCount() {
-//    title = "Geotifications: \(geotifications.count)"
-//    navigationItem.rightBarButtonItem?.isEnabled = (geotifications.count < 20)
-//  }
-//
-  
-  
+
   
   
   // MARK: Map overlay functions
@@ -129,8 +108,17 @@ class HomeViewController: UIViewController {
   
   
   
+//
+//  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//    if segue.identifier == "addGeotification" {
+//      let navigationController = segue.destination as! UINavigationController
+//      let vc = navigationController.viewControllers.first as! AddGeotificationViewController
+//      vc.delegate = self
+//    }
+//  }
   
   
+
   
   
   func removeRadiusOverlay(forGeotification geotification: Geotification) {
@@ -150,56 +138,129 @@ class HomeViewController: UIViewController {
   
   
   
-//
-//
-//
-//  func region(with geotification: Geotification) -> CLCircularRegion {
-//    let region = CLCircularRegion(center: geotification.coordinate, radius: geotification.radius, identifier: geotification.identifier)
-//    region.notifyOnEntry = (geotification.eventType == .onEntry)
-//    region.notifyOnExit = !region.notifyOnEntry
-//    return region
-//  }
-  
-  
-  
-//
-//  func startMonitoring(geotification: Geotification) {
-//    if !CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
-//      showAlert(withTitle:"Error", message: "Geofencing is not supported on this device!")
-//      return
-//    }
-//
-//
-//
-//
-//    if CLLocationManager.authorizationStatus() != .authorizedAlways {
-//      let message = """
-//      Your geotification is saved but will only be activated once you grant
-//      Geotify permission to access the device location.
-//      """
-//      showAlert(withTitle:"Warning", message: message)
-//    }
-//
-//    let fenceRegion = region(with: geotification)
-//    locationManager.startMonitoring(for: fenceRegion)
-//  }
-//
-//
-//
-//
-//
-//
-//  func stopMonitoring(geotification: Geotification) {
-//    for region in locationManager.monitoredRegions {
-//      guard let circularRegion = region as? CLCircularRegion, circularRegion.identifier == geotification.identifier else { continue }
-//      locationManager.stopMonitoring(for: circularRegion)
-//    }
-//  }
-  
   
   
   
 }
+
+
+
+
+
+
+
+
+
+
+
+extension HomeViewController : FiltersDelegate{
+  
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "updateYelpFilter" {
+      
+      let destinationVC = segue.destination as! FiltersViewController
+      destinationVC.delegate = self
+    }
+  }
+  
+  
+
+  func getYelpData(mylocation: CLLocation) {
+    
+  
+    let querystring = buildQuerystring(mylocation: mylocation)
+    Alamofire.request(querystring, headers: self.headers).responseJSON {
+      response in
+      if response.result.isSuccess {
+        print("Success! GotYELPdata")
+        let yelpJSON : JSON = JSON(response.result.value!)
+        print(yelpJSON)
+      }
+      else {
+        print("Error \(String(describing: response.result.error))")
+      }
+    }
+  }
+  
+  
+  func buildQuerystring(mylocation: CLLocation) -> String{
+    // Endpoints
+    var fURL = self.YELP_URL + self.YELP_ENDPOINT_SEARCH
+    // Coordinates
+    fURL += "?longitude=\(mylocation.coordinate.longitude)&latitude=\(mylocation.coordinate.latitude)"
+    
+    // Term
+    fURL += ""==self.currentFilter.category ? "" : "\(fURL)&term=\(self.currentFilter.category!)"
+    
+    //Price
+    fURL += "0"==self.currentFilter.price ?  "" : "&price=\(self.currentFilter.price!)"
+    
+    //IsOpen
+    fURL += "&open_now=\(self.currentFilter.open!)"
+    
+    print(fURL)
+    return fURL
+  }
+  
+  
+  
+  
+  func userEnteredFilter(data: YelpSearchFilter)  {
+    self.currentFilter = data
+    activateLocationTrackingTimer()
+  }
+  
+  
+  
+
+  
+  func activateLocationTrackingTimer(){
+    // Reset all tracking timer whenever a new filter has been created.
+    for tasks in asyncTaskList{
+      tasks.cancel()
+    }
+    let newtasks = DispatchWorkItem {  self.locationManager.stopUpdatingLocation() }
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1200, execute: newtasks)
+    asyncTaskList.append(newtasks)
+    locationManager.startUpdatingLocation()
+  }
+}
+
+
+
+
+
+//  // (YelpSearchFilter.category)&"
+//  Alamofire.request(YELP_URL + YELP_ENDPOINT_SEARCH, headers: headers).responseJSON { response in
+//  debugPrint(response)
+//  }
+
+//    let tempResult = json["main"]["temp"].doubleValue
+//    weatherDataModel.temperature = Int(tempResult - 273.15)
+//    weatherDataModel.city = json["name"].stringValue
+//    weatherDataModel.condition = json["weather"][0]["id"].intValue
+//    updateUIWithWeatherData()
+// Need to set preference in here only?
+//getYelpData(url: self.YELP_URL + self.YELP_ENDPOINT_SEARCH, filterData: YelpSearchFilter)
+//
+//  let turnOffTimer;
+//
+//  turnOffTimer= DispatchWorkItem { print("do something") }
+//
+//  // execute task in 2 seconds
+//  DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: task)
+//
+//  // optional: cancel task
+//  task.cancel()
+// Turn Off location tracking after 20 mins.
+//    DispatchQueue.main.asyncAfter(deadline: .now() + 1200) {
+//      self.locationManager.stopUpdatingLocation()
+//    }
+
+
+
+
 
 
 
@@ -222,6 +283,15 @@ extension HomeViewController: AddGeotificationsViewControllerDelegate {
 
 
 
+
+
+
+
+
+
+
+
+
 // MARK: - Location Manager Delegate
 extension HomeViewController: CLLocationManagerDelegate {
   
@@ -238,10 +308,30 @@ extension HomeViewController: CLLocationManagerDelegate {
   }
   
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    <#code#>
+    let location = locations[locations.count - 1]
+    if location.horizontalAccuracy > 0 {
+        //locationManager.stopUpdatingLocation()
+        debuglabel.text = "long= \(location.coordinate.longitude)"
+        debuglabel2.text = "lat= \(location.coordinate.latitude)"
+      getYelpData(mylocation: location)
+      
+      
+      
+    }
+
   }
-  
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 

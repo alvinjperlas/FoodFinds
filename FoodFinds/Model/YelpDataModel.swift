@@ -44,15 +44,15 @@ class YelpDataModel{
     var is_closed : Bool = true
     var url : String = ""
     var review_count : Int = 0
-    var categories : YelpCategory!
+    var categories : [YelpCategory]!
     var rating : Double = 0
     var coordinate : YelpCoordinate!
-    var transaction : String = ""
+    var transaction : [String]!
     var price : String = ""
     var location : YelpLocation!
-    var phone : String = ""
+    var phone : String!
     var displayPhone : String = ""
-    var distance : String = ""
+    var distance : Double!
 }
 
 class YelpSearchFilter{
