@@ -2,7 +2,7 @@
 import UIKit
 import MapKit
 import CoreLocation
-import SwiftyJSON
+  import SwiftyJSON
 import Alamofire
 
 
@@ -36,7 +36,7 @@ class HomeViewController: UIViewController {
   let YELP_ENDPOINT_SEARCH = "/businesses/search"
 
    var currentFilter = YelpSearchFilter(category: "", rating: 0,price: "0",open: true)
-  var yelpSearchResults : [YelpDataModel] = []
+  var suggestedPlaces : [String:YelpDataModel] = [:] //business ID, data model.
   @IBOutlet weak var mapView: MKMapView!
   
   var asyncTaskList : [ DispatchWorkItem] = []
@@ -175,6 +175,7 @@ extension HomeViewController : FiltersDelegate{
       if response.result.isSuccess {
         print("Success! GotYELPdata")
         let yelpJSON : JSON = JSON(response.result.value!)
+        self.updateYelpResults(json: yelpJSON)
         print(yelpJSON)
       }
       else {
@@ -182,6 +183,63 @@ extension HomeViewController : FiltersDelegate{
       }
     }
   }
+  
+  
+  func updateYelpResults(json: JSON){
+    //for (key, subJson): (String, JSON) in json["businesses"]{}
+    for result in json["businesses"].arrayValue {
+      if !(suggestedPlaces[result["id"].stringValue] != nil) {
+        //if business id is not yet stored, store it.
+        //suggestedPlaces[result["id"].stringValue] = result
+        let currentSearch = YelpDataModel()
+        let currentCoordinate = YelpCoordinate()
+        let currentLocation = YelpLocation()
+        
+        currentSearch.categoryList = []
+        currentSearch.transaction = []
+        //let currCategory = YelpCategory()
+        
+        currentSearch.is_closed = result["is_closed"].boolValue
+        currentSearch.alias = result["alias"].stringValue
+        currentSearch.businessID = result["id"].stringValue
+        currentSearch.displayPhone = result["display_phone"].stringValue
+        currentSearch.distance = result["distance"].doubleValue
+        currentSearch.phone = result["phone"].stringValue
+        currentSearch.price = result["price"].stringValue
+        currentSearch.rating = result["rating"].doubleValue
+        currentSearch.review_count = result["review_count"].intValue
+        currentSearch.image_url = result["image_url"].stringValue
+        currentSearch.url = result["url"].stringValue
+        
+        for categoryEntry in result["categories"].arrayValue{
+          currentSearch.categoryList.append(categoryEntry["alias"].stringValue)
+          currentSearch.categoryList.append(categoryEntry["title"].stringValue)
+        }
+        
+        currentCoordinate.latitude = result["coordinates"]["latitude"].doubleValue
+        currentCoordinate.longitude = result["coordinates"]["longitude"].doubleValue
+        
+        currentSearch.coordinate = currentCoordinate
+        for trans in result["transactions"].arrayValue{
+          currentSearch.transaction.append(trans.stringValue)
+        }
+        
+        currentLocation.address1 = result["location"]["address1"].stringValue
+        currentLocation.address2 = result["location"]["address2"].stringValue
+        currentLocation.address3 = result["location"]["address3"].stringValue
+        currentLocation.city = result["location"]["city"].stringValue
+        currentLocation.zip_code = result["location"]["zip_code"].stringValue
+        currentLocation.country = result["location"]["country"].stringValue
+        currentLocation.state = result["location"]["state"].stringValue
+        
+        currentSearch.location = currentLocation
+        suggestedPlaces[currentSearch.businessID] = currentSearch
+      }
+    }
+  }
+  
+
+  
   
   
   func buildQuerystring(mylocation: CLLocation) -> String{
@@ -313,8 +371,8 @@ extension HomeViewController: CLLocationManagerDelegate {
         //locationManager.stopUpdatingLocation()
         debuglabel.text = "long= \(location.coordinate.longitude)"
         debuglabel2.text = "lat= \(location.coordinate.latitude)"
+      mapView.zoomToUserLocation()
       getYelpData(mylocation: location)
-      
       
       
     }

@@ -26,7 +26,7 @@ class YelpLocation{
     var zip_code : String = ""
     var country : String = ""
     var state : String = ""
-    var display_address : [String] = []
+    //var display_address : [String] = []
     
 }
 /*
@@ -44,7 +44,7 @@ class YelpDataModel{
     var is_closed : Bool = true
     var url : String = ""
     var review_count : Int = 0
-    var categories : [YelpCategory]!
+    //var categories : [YelpCategory]!
     var rating : Double = 0
     var coordinate : YelpCoordinate!
     var transaction : [String]!
@@ -53,6 +53,8 @@ class YelpDataModel{
     var phone : String!
     var displayPhone : String = ""
     var distance : Double!
+  
+  var categoryList : [String]!
 }
 
 class YelpSearchFilter{
