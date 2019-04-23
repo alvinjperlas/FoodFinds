@@ -16,11 +16,18 @@ struct PreferencesKeys {
 
 
 
+protocol DataUpdateDelegage {
+  
+  func newData(yelpdata: YelpDataModel)
+  
+}
 
 
 class HomeViewController: UIViewController {
   
   
+  var delegate : DataUpdateDelegage?
+ //  delegate?.newData(data: searchFilter)
   
   
   let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather"
@@ -43,6 +50,7 @@ class HomeViewController: UIViewController {
   var geotifications: [Geotification] = []
   var locationManager = CLLocationManager()
   
+  
     @IBOutlet weak var debuglabel2: UILabel!
     
     @IBOutlet weak var debuglabel: UILabel!
@@ -54,7 +62,7 @@ class HomeViewController: UIViewController {
     locationManager.requestAlwaysAuthorization()
 
    // loadAllGeotifications()
-    locationManager.startUpdatingLocation()
+   // locationManager.startUpdatingLocation()
     mapView.zoomToUserLocation()
   }
 
@@ -158,17 +166,20 @@ extension HomeViewController : FiltersDelegate{
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "updateYelpFilter" {
-      
       let destinationVC = segue.destination as! FiltersViewController
       destinationVC.delegate = self
+    }
+    
+    else if segue.identifier == "seeSuggestions"{
+      let suggestionVC = segue.destination as! SuggestionsViewController
+      //suggestionVC.datadelegate = self
+     suggestionVC.suggestedPlaces = self.suggestedPlaces
     }
   }
   
   
 
   func getYelpData(mylocation: CLLocation) {
-    
-  
     let querystring = buildQuerystring(mylocation: mylocation)
     Alamofire.request(querystring, headers: self.headers).responseJSON {
       response in
@@ -199,6 +210,7 @@ extension HomeViewController : FiltersDelegate{
         currentSearch.transaction = []
         //let currCategory = YelpCategory()
         
+        currentSearch.name = result["name"].stringValue
         currentSearch.is_closed = result["is_closed"].boolValue
         currentSearch.alias = result["alias"].stringValue
         currentSearch.businessID = result["id"].stringValue
@@ -234,11 +246,13 @@ extension HomeViewController : FiltersDelegate{
         
         currentSearch.location = currentLocation
         suggestedPlaces[currentSearch.businessID] = currentSearch
+        
+        
+        //delegate?.newData(yelpdata: currentSearch)
       }
     }
   }
   
-
   
   
   
@@ -279,7 +293,7 @@ extension HomeViewController : FiltersDelegate{
       tasks.cancel()
     }
     let newtasks = DispatchWorkItem {  self.locationManager.stopUpdatingLocation() }
-    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1200, execute: newtasks)
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 60, execute: newtasks)
     asyncTaskList.append(newtasks)
     locationManager.startUpdatingLocation()
   }

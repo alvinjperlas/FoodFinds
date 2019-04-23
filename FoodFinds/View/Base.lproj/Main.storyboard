@@ -27,10 +27,10 @@
             </objects>
             <point key="canvasLocation" x="-1310" y="505"/>
         </scene>
-        <!--View Controller-->
+        <!--Suggestions View Controller-->
         <scene sceneID="sb3-d3-grU">
             <objects>
-                <viewController id="XH0-ok-rdY" sceneMemberID="viewController">
+                <viewController id="XH0-ok-rdY" customClass="SuggestionsViewController" customModule="FoodFinds" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QB5-e5-M6j"/>
                         <viewControllerLayoutGuide type="bottom" id="bbA-dF-8ry"/>
@@ -42,6 +42,36 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xmU-Rg-IgR">
                                 <rect key="frame" x="16" y="64" width="343" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellReuseIdentifier" rowHeight="91" id="V6z-Db-43o" customClass="CustomTableViewCell" customModule="FoodFinds" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="91"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V6z-Db-43o" id="tBu-ud-axK">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="90.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZh-5b-zkt">
+                                                    <rect key="frame" x="15" y="11" width="313" height="29"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOo-E5-9GY">
+                                                    <rect key="frame" x="15" y="40" width="313" height="51"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="Category" destination="aOo-E5-9GY" id="TqQ-iP-kXe"/>
+                                            <outlet property="Name" destination="jZh-5b-zkt" id="gbt-hO-so0"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -52,10 +82,13 @@
                             <constraint firstItem="bbA-dF-8ry" firstAttribute="top" secondItem="xmU-Rg-IgR" secondAttribute="bottom" id="meh-bT-zKy"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="xmU-Rg-IgR" id="oxN-MD-5Zf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wOC-jT-Bfe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="233" y="200"/>
+            <point key="canvasLocation" x="232.80000000000001" y="199.25037481259372"/>
         </scene>
         <!--FoodFinds-->
         <scene sceneID="QSg-Wp-O1B">
@@ -81,7 +114,7 @@
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="XH0-ok-rdY" kind="show" id="TeW-le-60A"/>
+                                    <segue destination="XH0-ok-rdY" kind="show" identifier="seeSuggestions" id="4Ff-oa-Uq7"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K97-Hc-IHW">
@@ -162,7 +195,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foodbg1" translatesAutoresizingMaskIntoConstraints="NO" id="TCK-e2-rwN">
-                                <rect key="frame" x="16" y="64" width="343.00000000000045" height="603"/>
+                                <rect key="frame" x="16" y="64" width="343" height="603"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ms-II-WLV">
                                 <rect key="frame" x="36" y="94" width="303" height="523"/>
