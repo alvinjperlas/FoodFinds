@@ -1,3 +1,8 @@
+/*Icons made by <a href="https://www.freepik.com/?__hstc=57440181.421198ddb591addc4118ed18b56bca09.1556172164639.1556172164639.1556172164639.1&__hssc=57440181.1.1556172164639&__hsfp=2810556" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"           title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"           title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+
+*/
+
+
 
 import UIKit
 import MapKit
@@ -174,6 +179,8 @@ extension HomeViewController : FiltersDelegate{
       let suggestionVC = segue.destination as! SuggestionsViewController
       //suggestionVC.datadelegate = self
      suggestionVC.suggestedPlaces = self.suggestedPlaces
+   //  self.locationManager.stopUpdatingLocation()
+
     }
   }
   
@@ -199,7 +206,9 @@ extension HomeViewController : FiltersDelegate{
   func updateYelpResults(json: JSON){
     //for (key, subJson): (String, JSON) in json["businesses"]{}
     for result in json["businesses"].arrayValue {
-      if !(suggestedPlaces[result["id"].stringValue] != nil) {
+      let isBusinessGoodEnough = Double(currentFilter.rating) <= result["rating"].doubleValue
+      
+      if !(suggestedPlaces[result["id"].stringValue] != nil) && isBusinessGoodEnough {
         //if business id is not yet stored, store it.
         //suggestedPlaces[result["id"].stringValue] = result
         let currentSearch = YelpDataModel()
@@ -263,10 +272,10 @@ extension HomeViewController : FiltersDelegate{
     fURL += "?longitude=\(mylocation.coordinate.longitude)&latitude=\(mylocation.coordinate.latitude)"
     
     // Term
-    fURL += ""==self.currentFilter.category ? "" : "\(fURL)&term=\(self.currentFilter.category!)"
+    fURL = ""==self.currentFilter.category ? fURL : "\(fURL)&term=\(self.currentFilter.category!)"
     
     //Price
-    fURL += "0"==self.currentFilter.price ?  "" : "&price=\(self.currentFilter.price!)"
+    fURL = "0"==self.currentFilter.price ?  fURL : "\(fURL)&price=\(self.currentFilter.price!)"
     
     //IsOpen
     fURL += "&open_now=\(self.currentFilter.open!)"
@@ -335,21 +344,21 @@ extension HomeViewController : FiltersDelegate{
 
 
 
-
-
-// MARK: AddGeotificationViewControllerDelegate
-extension HomeViewController: AddGeotificationsViewControllerDelegate {
-  
-  func addGeotificationViewController(_ controller: AddGeotificationViewController, didAddCoordinate coordinate: CLLocationCoordinate2D, radius: Double, identifier: String, note: String, eventType: Geotification.EventType) {
-    controller.dismiss(animated: true, completion: nil)
-    let clampedRadius = min(radius, locationManager.maximumRegionMonitoringDistance)
-    let geotification = Geotification(coordinate: coordinate, radius: clampedRadius, identifier: identifier, note: note, eventType: eventType)
-    add(geotification)
-    //startMonitoring(geotification: geotification)
-    //saveAllGeotifications()
-  }
-  
-}
+//
+//
+//// MARK: AddGeotificationViewControllerDelegate
+//extension HomeViewController: AddGeotificationsViewControllerDelegate {
+//
+//  func addGeotificationViewController(_ controller: AddGeotificationViewController, didAddCoordinate coordinate: CLLocationCoordinate2D, radius: Double, identifier: String, note: String, eventType: Geotification.EventType) {
+//    controller.dismiss(animated: true, completion: nil)
+//    let clampedRadius = min(radius, locationManager.maximumRegionMonitoringDistance)
+//    let geotification = Geotification(coordinate: coordinate, radius: clampedRadius, identifier: identifier, note: note, eventType: eventType)
+//    add(geotification)
+//    //startMonitoring(geotification: geotification)
+//    //saveAllGeotifications()
+//  }
+//
+//}
 
 
 
