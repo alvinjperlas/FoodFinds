@@ -50,6 +50,19 @@ class FiltersViewController: UIViewController {
   }
   
   
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    self.hideKeyboardWhenTappedAround()
+  }
+  
+  
+  func textFieldShouldReturn(textField: UITextField) -> Bool {
+    
+    textField.resignFirstResponder()
+    //or
+    //self.view.endEditing(true)
+    return true
+  }
   
 
 
