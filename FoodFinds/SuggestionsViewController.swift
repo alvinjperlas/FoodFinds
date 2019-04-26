@@ -23,7 +23,29 @@ class SuggestionsViewController: UIViewController, UITableViewDataSource{
   
   @IBOutlet weak var tableView: UITableView!
   
- 
+ /*
+   
+   // Get the index path from the cell that was tapped
+   
+   // Get the Row of the Index Path and set as index
+  
+   // Get in touch with the DetailViewController
+   let detailViewController = segue.destinationViewController as! DetailViewController
+   // Pass on the data to the Detail ViewController by setting it's indexPathRow value
+   detailViewController.index = index          */
+  
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "seeBusiness" {
+      let destinationVC = segue.destination as! BusinessViewController
+      let indexPath = tableView.indexPathForSelectedRow
+      let index = indexPath?.row
+      let businessID = data[index!]
+      destinationVC.BusinessData = suggestedPlaces[businessID]!
+    }
+  }
+    
+    
   
   func numberOfSections(in tableView: UITableView) -> Int {
     return 1
