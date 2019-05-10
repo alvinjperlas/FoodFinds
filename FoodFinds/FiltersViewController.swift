@@ -10,16 +10,8 @@ import Foundation
 import UIKit
 
 
-
-
-
-
-//Write the protocol declaration here:
-
 protocol FiltersDelegate {
-  
   func userEnteredFilter(data: YelpSearchFilter)
-  
 }
 
 
@@ -32,17 +24,17 @@ class FiltersViewController: UIViewController {
   @IBOutlet weak var priceControl: UISegmentedControl!
   @IBOutlet weak var isOpen: UISwitch!
   
-  
-  
   @IBAction func startExploring(_ sender: Any) {
     let category = categoryTextField.text
     let price = String(priceControl.selectedSegmentIndex)
     let rating = ratingControl.selectedSegmentIndex
     let open = isOpen.isOn
-    let searchFilter = YelpSearchFilter(category: category!, rating: rating,price: price,open: open)
-    
-    print("CALLING DELEGATE")
-    
+    let searchFilter = YelpSearchFilter(
+      category: category!,
+      rating: rating,
+      price: price,
+      open: open)
+ 
     delegate?.userEnteredFilter(data: searchFilter)
     
     //return to previous view
@@ -57,10 +49,7 @@ class FiltersViewController: UIViewController {
   
   
   func textFieldShouldReturn(textField: UITextField) -> Bool {
-    
     textField.resignFirstResponder()
-    //or
-    //self.view.endEditing(true)
     return true
   }
   

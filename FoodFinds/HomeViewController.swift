@@ -9,7 +9,7 @@ import MapKit
 import CoreLocation
 import SwiftyJSON
 import Alamofire
-
+import AudioToolbox
 
 
 
@@ -152,6 +152,7 @@ extension HomeViewController : FiltersDelegate{
         currentLocation.state = result["location"]["state"].stringValue
         currentSearch.location = currentLocation
         suggestedPlaces[currentSearch.businessID] = currentSearch
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
       }
     }
   }
