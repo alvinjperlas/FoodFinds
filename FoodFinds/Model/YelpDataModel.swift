@@ -26,8 +26,6 @@ class YelpLocation{
     var zip_code : String = ""
     var country : String = ""
     var state : String = ""
-    //var display_address : [String] = []
-    
 }
 /*
 "categories": [

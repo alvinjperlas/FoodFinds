@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FoodFinds/HomeViewController.swift"
-            timestampString = "578719033.26922"
+            timestampString = "579155793.107445"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "133"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FoodFinds/HomeViewController.swift"
-            timestampString = "578719033.269798"
+            timestampString = "579155793.108211"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "152"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FoodFinds/HomeViewController.swift"
-            timestampString = "578719033.269937"
+            timestampString = "579155793.108665"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "134"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FoodFinds/HomeViewController.swift"
-            timestampString = "578719033.270134"
+            timestampString = "579155793.108999"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "135"
@@ -70,17 +70,94 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FoodFinds/FiltersViewController.swift"
-            timestampString = "579045376.3176939"
+            timestampString = "579155403.597595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "17"
             endingLineNumber = "17"
             landmarkName = "unknown"
             landmarkType = "0">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FoodFinds.FiltersViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; FoodFinds.FiltersViewController"
+                  moduleName = "FoodFinds"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aperlas/Documents/GitHub/FoodFinds/FoodFinds/FiltersViewController.swift"
+                  timestampString = "579155403.910995"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FoodFinds.FiltersViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; FoodFinds.FiltersViewController"
+                  moduleName = "FoodFinds"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aperlas/Documents/GitHub/FoodFinds/FoodFinds/FiltersViewController.swift"
+                  timestampString = "579155403.913008"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "257">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FoodFinds.FiltersViewController.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;FoodFinds.FiltersViewController&gt;"
+                  moduleName = "FoodFinds"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aperlas/Documents/GitHub/FoodFinds/FoodFinds/FiltersViewController.swift"
+                  timestampString = "579155403.9154119"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FoodFinds.FiltersViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;FoodFinds.FiltersViewController&gt;"
+                  moduleName = "FoodFinds"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aperlas/Documents/GitHub/FoodFinds/FoodFinds/FiltersViewController.swift"
+                  timestampString = "579155403.917552"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "177">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FoodFinds.FiltersViewController.__deallocating_deinit"
+                  moduleName = "FoodFinds"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aperlas/Documents/GitHub/FoodFinds/FoodFinds/FiltersViewController.swift"
+                  timestampString = "579155403.919782"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

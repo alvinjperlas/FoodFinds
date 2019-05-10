@@ -29,9 +29,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Geotify requires constant access to your phone’s location to notify you when you enter or leave a geofence.</string>
+	<string>FoodFinds requires constant access to your phone’s location to notify you of Business matches</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Geotify requires constant access to your phone’s location to notify you when you enter or leave a geofence.</string>
+	<string>FoodFindsrequires constant access to your phone’s location to notify you of Business matches</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
